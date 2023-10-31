@@ -1,9 +1,6 @@
 // # ESERCIZIO VUE TO DO LIST
 // > Rifare l'esercizio della to do list.
-// Ogni todo sarà un oggetto, formato da tre proprietà:
-//  - `text`, una stringa che indica il testo del todo
-//  - `done`, un booleano (true/false) che indica se il todo è stato fatto oppure no
-//   - id, un numero intero positivo incrementale  (univoco per ogni task)
+
 
 
 // ### MILESTONE 1
@@ -20,3 +17,43 @@
 // - 1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
 //  - 2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se `done` era uguale a `false`, impostare `true` e viceversa)
 //  - 3- Bonus Super (superfacoltativo ): usare id invece di indici nei metodi
+////////////////////////////////////////////////////////////////////////////////////////////
+// Ogni todo sarà un oggetto, formato da tre proprietà:
+//  - `text`, una stringa che indica il testo del todo
+//  - `done`, un booleano (true/false) che indica se il todo è stato fatto oppure no
+//   - id, un numero intero positivo incrementale  (univoco per ogni task)
+
+const {createApp} = Vue
+
+createApp({
+    data(){
+
+        return {
+            project :[
+                {
+                    text: 'Isaac Amigurumi',
+                    done: false,
+                    id: 1
+                },
+                {
+                    text: 'Batman Amigurumi',
+                    done: true,
+                    id: 2
+                },
+                {
+                    text: 'Snorlax Amigurumi',
+                    done: false,
+                    id: 3
+                },
+                {
+                    text: 'Bee Amigurumi',
+                    done: true,
+                    id: 4
+                }
+            ],
+            lastId : 4,
+        }
+    }
+
+}).mount("#app");
+
