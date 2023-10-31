@@ -1,0 +1,20 @@
+
+
+body{
+
+    background-color: rgb(169, 144, 52);
+  
+}
+img{
+    height: 50px;
+    width: 50px;
+}
+
+header img{   
+    height: 200px;
+    width: 200px;    
+}
+
+li{
+    list-style: none;
+}

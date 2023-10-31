@@ -3,9 +3,7 @@
 
 
 
-// ### MILESTONE 1
-// Stampare all'interno di una lista HTML un item per ogni todo.
-// Se la proprietà `done` è uguale a `true`, visualizzare il testo del todo ~~sbarrato~~.
+
 
 // ### MILESTONE 2
 // Visualizzare a fianco ad ogni item ha una "x": cliccando su di essa, il todo viene rimosso dalla lista.
@@ -18,10 +16,7 @@
 //  - 2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se `done` era uguale a `false`, impostare `true` e viceversa)
 //  - 3- Bonus Super (superfacoltativo ): usare id invece di indici nei metodi
 ////////////////////////////////////////////////////////////////////////////////////////////
-// Ogni todo sarà un oggetto, formato da tre proprietà:
-//  - `text`, una stringa che indica il testo del todo
-//  - `done`, un booleano (true/false) che indica se il todo è stato fatto oppure no
-//   - id, un numero intero positivo incrementale  (univoco per ogni task)
+
 
 const {createApp} = Vue
 
@@ -31,23 +26,27 @@ createApp({
         return {
             project :[
                 {
-                    text: 'Isaac Amigurumi',
+                    text: 'Hulk Amigurumi',
                     done: false,
+                    image :'/img/hulk-amigurumi.png',
                     id: 1
                 },
                 {
-                    text: 'Batman Amigurumi',
+                    text: 'Captain America Amigurumi',
                     done: true,
+                    image :'/img/captain-america.png',
                     id: 2
                 },
                 {
-                    text: 'Snorlax Amigurumi',
+                    text: 'Peas Amigurumi',
                     done: false,
+                    image : '/img/peas-crochet.png',
                     id: 3
                 },
                 {
                     text: 'Bee Amigurumi',
                     done: true,
+                    image: '/img/bee-crochet.png',
                     id: 4
                 }
             ],
@@ -55,5 +54,5 @@ createApp({
         }
     }
 
-}).mount("#app");
+}).mount('#app');
 
