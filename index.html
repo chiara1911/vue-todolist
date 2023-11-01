@@ -19,12 +19,12 @@
         <header class="d-flex flex-column justify-content-center align-items-center p-5">
           <img src="/img/logo.png" alt="" />
           <h1 class="text-center">Ordini da completare</h1>
-            <input type="text" name="nome" v-model ="todoText">
+            <input type="text" name="nome" v-model ="todoText" @keyup.enter="addTasks">
             <button class="btn btn-success mt-2" @click="addTasks"> aggiungi ordine</button>
         </header>
         <main>
             
-          <ul class="d-flex flex-column justify-content-between">
+          <ul class="d-flex justify-content-between">
             <li v-for="(todo,index) in project" class="p-3">
               <span class="p-3">{{todo.text}}
                 <img :src="todo.image" :alt="todo.text" />
