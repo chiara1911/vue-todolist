@@ -18,17 +18,17 @@
       <div class="container">
         <header class="d-flex flex-column justify-content-center align-items-center p-5">
           <img src="/img/logo.png" alt="" />
-          <h1 class="text-center">To do List</h1>
+          <h1 class="text-center">Ordini da completare</h1>
             <input type="text" >
         </header>
         <main>
             
-          <ul class="d-flex justify-content-between">
-            <li v-for="(todo,index) in project">
+          <ul class="d-flex flex-column justify-content-between">
+            <li v-for="(todo,index) in project" class="p-3">
               <span class="p-3">{{todo.text}}
                 <img :src="todo.image" :alt="todo.text" />
             </span>              
-              <i class="fa-regular fa-circle-xmark"></i>
+              <i class="fa-regular fa-circle-xmark" @click = "removeTasks(index)"></i>
             </li>
           </ul>
         </main>

@@ -22,11 +22,9 @@ const {createApp} = Vue
 
 createApp({
     data(){
-
         return {
             project :[
-                {
-                    text: 'Hulk Amigurumi',
+                {   text: 'Hulk Amigurumi',
                     done: false,
                     image :'/img/hulk-amigurumi.png',
                     id: 1
@@ -51,6 +49,11 @@ createApp({
                 }
             ],
             lastId : 4,
+        }
+    },
+    methods :{
+        removeTasks(index){
+            this.project.splice(index,1)
         }
     }
 
