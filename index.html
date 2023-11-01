@@ -19,7 +19,8 @@
         <header class="d-flex flex-column justify-content-center align-items-center p-5">
           <img src="/img/logo.png" alt="" />
           <h1 class="text-center">Ordini da completare</h1>
-            <input type="text" >
+            <input type="text" name="nome" v-model ="todoText">
+            <button class="btn btn-success mt-2" @click="addTasks"> aggiungi ordine</button>
         </header>
         <main>
             

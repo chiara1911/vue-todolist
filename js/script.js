@@ -1,10 +1,6 @@
 // # ESERCIZIO VUE TO DO LIST
 // > Rifare l'esercizio della to do list.
 
-
-
-
-
 // ### MILESTONE 2
 // Visualizzare a fianco ad ogni item ha una "x": cliccando su di essa, il todo viene rimosso dalla lista.
 
@@ -17,45 +13,55 @@
 //  - 3- Bonus Super (superfacoltativo ): usare id invece di indici nei metodi
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-
-const {createApp} = Vue
+const { createApp } = Vue;
 
 createApp({
-    data(){
-        return {
-            project :[
-                {   text: 'Hulk Amigurumi',
-                    done: false,
-                    image :'/img/hulk-amigurumi.png',
-                    id: 1
-                },
-                {
-                    text: 'Captain America Amigurumi',
-                    done: true,
-                    image :'/img/captain-america.png',
-                    id: 2
-                },
-                {
-                    text: 'Peas Amigurumi',
-                    done: false,
-                    image : '/img/peas-crochet.png',
-                    id: 3
-                },
-                {
-                    text: 'Bee Amigurumi',
-                    done: true,
-                    image: '/img/bee-crochet.png',
-                    id: 4
-                }
-            ],
-            lastId : 4,
-        }
+  data() {
+    return {
+      project: [
+        {
+          text: "Hulk Amigurumi",
+          done: false,
+          image: "/img/hulk-amigurumi.png",
+          id: 1,
+        },
+        {
+          text: "Captain America Amigurumi",
+          done: true,
+          image: "/img/captain-america.png",
+          id: 2,
+        },
+        {
+          text: "Peas Amigurumi",
+          done: false,
+          image: "/img/peas-crochet.png",
+          id: 3,
+        },
+        {
+          text: "Bee Amigurumi",
+          done: true,
+          image: "/img/bee-crochet.png",
+          id: 4,
+        },
+      ],
+      lastId: 4,
+      todoText: '',
+    };
+  },
+  methods: {
+    removeTasks(index) {
+      this.project.splice(index, 1);
     },
-    methods :{
-        removeTasks(index){
-            this.project.splice(index,1)
-        }
-    }
-
-}).mount('#app');
-
+    addTasks() {
+      this.lastId++;
+      const newProject = {
+        id: this.lastId,
+        text: this.todoText,
+        done: false,
+        image: "/img/new-project.avif"
+      };
+      this.project.push(newProject);
+      this.todoText = '';
+    },
+  },
+}).mount("#app");
