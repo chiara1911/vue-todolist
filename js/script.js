@@ -20,37 +20,63 @@ createApp({
     return {
       project: [
         {
-          text: "Hulk Amigurumi",
+          text: 'Hulk',
           done: false,
           image: "/img/hulk-amigurumi.png",
           id: 1,
         },
         {
-          text: "Captain America Amigurumi",
+          text: 'Captain America ',
           done: true,
           image: "/img/captain-america.png",
           id: 2,
         },
         {
-          text: "Peas Amigurumi",
+          text: 'Peas ',
           done: false,
           image: "/img/peas-crochet.png",
           id: 3,
         },
         {
-          text: "Bee Amigurumi",
-          done: true,
+          text: 'Bee ',
+          done: false,
           image: "/img/bee-crochet.png",
           id: 4,
         },
+        {
+            text: 'Avocadi ',
+            done: true,
+            image: "/img/avocadi.png",
+            id: 5,
+          },
+          {
+            text: 'Baby Yoda ',
+            done: true,
+            image: "/img/baby-yoda.png",
+            id: 6,
+          },
+          {
+            text: 'Elephant ',
+            done: true,
+            image: "/img/elephant.png",
+            id: 7,
+          },
+          {
+            text: 'Iron Man ',
+            done: true,
+            image: "/img/ironman.png",
+            id: 8,
+          }
       ],
-      lastId: 4,
+     
+      lastId: 8,
       todoText: '',
     };
   },
   methods: {
-    removeTasks(index) {
-      this.project.splice(index, 1);
+    
+    removeTasks(id) {
+      this.project.splice(id, 1);
     },
     addTasks() {
       this.lastId++;
@@ -58,14 +84,15 @@ createApp({
         id: this.lastId,
         text: this.todoText,
         done: false,
-        image: "/img/new-project.avif"
+        image: "/img/new-project.avif",
       };
       this.project.push(newProject);
       this.todoText = '';
     },
 
-removeDone (obj){
-project.done = !project.done
-}
+    removeDone(obj) {
+      obj.done = !obj.done;
+    },
+    
   },
 }).mount('#app');
