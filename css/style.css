@@ -1,9 +1,11 @@
 
-
+*{
+    font-size: 1.2rem;
+    font-family: 'Caveat';
+}
 body{
-
-    background-color: #AF665B;
-  
+  background: linear-gradient(90deg, rgba(165,111,123,1) 0%, rgba(153,97,89,1) 48%, rgba(207,179,139,1) 100%);;
+ 
 }
 img{
     height: 200px;
@@ -17,4 +19,21 @@ header img{
 
 li{
     list-style: none;
+}
+
+#logo{
+    border-radius: 50%;
+}
+.done{
+    text-decoration: line-through;
+}
+
+#siestas{
+    width: 300px;
+    height: 300px;
+    border-radius: 20%;
+}
+
+i{
+    cursor: pointer;
 }

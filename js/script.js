@@ -63,5 +63,9 @@ createApp({
       this.project.push(newProject);
       this.todoText = '';
     },
+
+removeDone (obj){
+project.done = !project.done
+}
   },
-}).mount("#app");
+}).mount('#app');

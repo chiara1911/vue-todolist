@@ -9,6 +9,9 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Vue TODO List</title>
@@ -16,22 +19,33 @@
   <body>
     <div id="app">
       <div class="container">
-        <header class="d-flex flex-column justify-content-center align-items-center p-5">
-          <img src="/img/logo.png" alt="" />
-          <h1 class="text-center">Ordini da completare</h1>
-            <input type="text" name="nome" v-model ="todoText" @keyup.enter="addTasks">
+        <header class="d-flex flex-column justify-content-center align-items-center m-2">
+          <img src="/img/logo.png" alt="logo" id="logo"/>
+          <div class="d-flex flex-column m-5">
+            <label for="task">Aggiungi altri ordini da completare</label>
+            <input type="text" name="task" v-model ="todoText" @keyup.enter="addTasks">
             <button class="btn btn-success mt-2" @click="addTasks"> aggiungi ordine</button>
+          </div>
+          
         </header>
         <main>
-            
-          <ul class="d-flex justify-content-between">
-            <li v-for="(todo,index) in project" class="p-3">
-              <span class="p-3">{{todo.text}}
+            <h1 class="text-center">Ordini da completare</h1>
+          <ul class="d-flex justify-content-between" v-if ="project.length > 0">
+            <li v-for="(todo,index) in project" class="p-3"  >
+              <span class="p-3" :class ="{'done' : todo.done}" @click="removeDone">
+                <div>{{todo.text}}</div>
                 <img :src="todo.image" :alt="todo.text" />
             </span>              
               <i class="fa-regular fa-circle-xmark" @click = "removeTasks(index)"></i>
             </li>
           </ul>
+          <div v-else class="d-flex flex-column justify-content-center align-items-center">
+            <img src="/img/Siestas.webp" alt="relax" id="siestas">
+            <span class="text-light fst-italic">
+                Ottimo! Hai finito tutti i progetti da fare, ora non ti resta che riposarti e preparare tutto per il mercatino!
+            </span>
+            
+          </div>
         </main>
       </div>
     </div>
